@@ -13,12 +13,12 @@ type Bot struct {
 }
 
 func New(cfg *config.Config) (*Bot, error) {
-	api, err := tgbotapi.NewBotAPI(cfg.TelegramToken)
+	api, err := tgbotapi.NewBotAPI(cfg.Telegram.Token)
 	if err != nil {
 		return nil, err
 	}
 
-	api.Debug = cfg.Debug
+	api.Debug = cfg.Telegram.Debug
 	log.Printf("Authorized on account %s", api.Self.UserName)
 
 	return &Bot{
