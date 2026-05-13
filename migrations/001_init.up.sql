@@ -1,10 +1,12 @@
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
 CREATE TABLE IF NOT EXISTS users (
     id BIGINT PRIMARY KEY,
     username TEXT,
     created_at TIMESTAMP DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS document (
+CREATE TABLE IF NOT EXISTS documents (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id BIGINT REFERENCES users(id),
     name TEXT NOT NULL,

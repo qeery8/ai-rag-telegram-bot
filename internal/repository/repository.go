@@ -15,15 +15,15 @@ type Repo struct {
 }
 
 type UserRepository interface {
-	Save(ctx context.Context, user *domain.User) error
+	SaveUser(ctx context.Context, user *domain.User) error
 	FindByID(ctx context.Context, userID int64) (*domain.User, error)
 }
 
 type DocumentRepository interface {
-	Save(ctx context.Context, document *domain.Document) error
-	FindByID(ctx context.Context, id uuid.UUID) (*domain.Document, error)
-	FindByUserID(ctx context.Context, userID int64) ([]*domain.Document, error)
-	UpdateStatus(ctx context.Context, id uuid.UUID, status domain.DocumentStatus) error
+	SaveDocument(ctx context.Context, document *domain.Document) error
+	FindDocumentByID(ctx context.Context, id uuid.UUID) (*domain.Document, error)
+	FindDocumentByUserID(ctx context.Context, userID int64) ([]*domain.Document, error)
+	UpdateDocumentStatus(ctx context.Context, id uuid.UUID, status domain.DocumentStatus) error
 }
 
 type ChatRepository interface {
