@@ -14,9 +14,9 @@ const (
 )
 
 type Chat struct {
-	ID        uuid.UUID
-	UserID    int64
-	Role      ChatRole
-	Content   string
-	CreatedAt time.Time
+	ID        uuid.UUID `db:"id"`
+	UserID    int64     `db:"user_id"`
+	Role      ChatRole  `db:"role"`
+	Content   string    `db:"content"`
+	CreatedAt time.Time `db:"created_at"`
 }

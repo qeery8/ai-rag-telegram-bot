@@ -1,7 +1,7 @@
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE IF NOT EXISTS users (
-    id BIGINT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username TEXT,
     created_at TIMESTAMP DEFAULT NOW()
 );

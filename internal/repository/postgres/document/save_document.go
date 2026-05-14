@@ -17,7 +17,7 @@ func (r *DocumentRepoSQL) SaveDocument(ctx context.Context, document *domain.Doc
 	if err != nil {
 		return fmt.Errorf("documentRepo.SaveDocument: prepare failed: %w", err)
 	}
-	stmt.Close()
+	defer stmt.Close()
 
 	if err = stmt.GetContext(ctx, document, document); err != nil {
 		return fmt.Errorf("documentRepo.SaveDocument: query failed: %w", err)

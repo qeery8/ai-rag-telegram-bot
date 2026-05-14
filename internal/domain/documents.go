@@ -16,10 +16,10 @@ const (
 )
 
 type Document struct {
-	ID        uuid.UUID
-	UserID    int64
-	Name      string
-	Type      string
-	Status    DocumentStatus
-	CreatedAt time.Time
+	ID        uuid.UUID      `db:"id"`
+	UserID    int64          `db:"user_id"`
+	Name      string         `db:"name"`
+	Type      string         `db:"type"`
+	Status    DocumentStatus `db:"status"`
+	CreatedAt time.Time      `db:"created_at"`
 }

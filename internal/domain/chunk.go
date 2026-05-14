@@ -7,10 +7,10 @@ import (
 )
 
 type Chunk struct {
-	ID         uuid.UUID
-	DocumentID uuid.UUID
-	Content    string
-	Position   int
-	VectorID   string
-	CreatedAt  time.Time
+	ID         uuid.UUID `db:"id"`
+	DocumentID uuid.UUID `db:"document_id"`
+	Content    string    `db:"content"`
+	Position   int       `db:"position"`
+	VectorID   string    `db:"vector_id"`
+	CreatedAt  time.Time `db:"created_at"`
 }

@@ -3,7 +3,7 @@ package domain
 import "time"
 
 type User struct {
-	ID        int64
-	Username  string
-	CreatedAt time.Time
+	ID        int64     `db:"id"`
+	Username  string    `db:"username"`
+	CreatedAt time.Time `db:"created_at"`
 }
