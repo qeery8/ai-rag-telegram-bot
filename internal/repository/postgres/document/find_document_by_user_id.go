@@ -12,7 +12,7 @@ func (r *DocumentRepoSQL) FindDocumentByUserID(ctx context.Context, userID int64
 		SELECT * FROM documents WHERE user_id = $1
 	`
 
-	if err := r.db.GetContext(ctx, &documents, query, userID); err != nil {
+	if err := r.db.SelectContext(ctx, &documents, query, userID); err != nil {
 		return nil, fmt.Errorf("documentRepo.FindDocumentByID: query failed: %w", err)
 	}
 
